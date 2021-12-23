@@ -1,0 +1,11 @@
+id: 23
+name: Apparel
+translations:
+  - lang: en
+    value: Apparel
+  - lang: es
+    value: Vestir
+  - lang: de
+    value: Kleidung
+alternative_names: []
+attributes: []

@@ -1,0 +1,30 @@
+id: 2
+name: Color
+translations:
+  - lang: en
+    value: Color
+  - lang: es
+    value: Color
+  - lang: de
+    value: Farbe
+alternative_names: []
+datatype:
+  string
+  # - name: Red
+  #   hexcode: "#FF0000"
+  #   translations:
+  #     - lang: en
+  #       value: Red
+  #     - lang: es
+  #       value: Roja
+  #     - lang: de
+  #       value: Rot
+  # - name: Green
+  #   hexcode: "#00FF00"
+  #   translations:
+  #     - lang: en
+  #       value: Red
+  #     - lang: es
+  #       value: Verde
+  #     - lang: de
+  #       value: Grün

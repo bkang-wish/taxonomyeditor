@@ -1,0 +1,11 @@
+id: 24
+name: Clothing
+translations:
+  - lang: en
+    value: Clothing
+  - lang: es
+    value: Ropa
+  - lang: de
+    value: Kleidung
+alternative_names: []
+attributes: []

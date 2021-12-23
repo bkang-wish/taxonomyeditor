@@ -1,0 +1,21 @@
+id: 25
+name: Jeans
+translations:
+  - lang: en
+    value: Jeans
+  - lang: es
+    value: Pantalones
+  - lang: de
+    value: Jeans
+alternative_names:
+  - name: Pants
+    translations:
+      - lang: en
+        value: Pants
+      - lang: es
+        value: Pants
+      - lang: de
+        value: Pants
+attributes:
+  - 1
+  - 2

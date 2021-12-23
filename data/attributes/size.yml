@@ -1,0 +1,10 @@
+id: 1
+name: Size
+translations:
+  - lang: en
+    value: Size
+  - lang: es
+    value: Tamaño
+  - lang: de
+    value: Größe
+datatype: string
