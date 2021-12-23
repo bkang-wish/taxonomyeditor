@@ -82,9 +82,10 @@ export class CategoryEditorProvider implements vscode.CustomTextEditorProvider {
     // Receive message from the webview.
     webviewPanel.webview.onDidReceiveMessage((e) => {
       switch (e.type) {
-        // case "add":
-        //   this.addNewScratch(document);
-        //   return;
+        case "updateCategory":
+          const category = JSON.parse(e.category);
+          console.log("newc", category);
+          return;
 
         case "delete":
           this.deleteScratch(document, e.id);
@@ -102,6 +103,10 @@ export class CategoryEditorProvider implements vscode.CustomTextEditorProvider {
     // Local path to script and css for the webview
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(this.context.extensionUri, "src", "browser", "category-form.js")
+    );
+
+    const cssUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this.context.extensionUri, "src", "browser", "main.css")
     );
 
     const toolkitUri = getUri(webview, this.context.extensionUri, [
@@ -126,7 +131,7 @@ export class CategoryEditorProvider implements vscode.CustomTextEditorProvider {
 				-->
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src ${webview.cspSource}; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link href="${cssUri}" rel="stylesheet">
 				<title>Cat Scratch</title>
 			</head>
 			<body>

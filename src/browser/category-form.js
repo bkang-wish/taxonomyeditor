@@ -1,3 +1,5 @@
+const vscode = acquireVsCodeApi();
+
 const rootEl = document.getElementById("root");
 
 window.addEventListener("message", (event) => {
@@ -48,10 +50,23 @@ window.addEventListener("message", (event) => {
         };
       });
 
+      const buttonEl = document.createElement("vscode-button");
+      buttonEl.style = {
+        display: "block",
+      };
+      buttonEl.innerText = "Save";
+      buttonEl.onclick = (e) => {
+        vscode.postMessage({
+          command: "updateCategory",
+          category: JSON.stringify(category),
+        });
+      };
+
       rootEl.appendChild(nameEl);
       rootEl.appendChild(translationsContainerEl);
       rootEl.appendChild(attributesTitleEl);
       rootEl.appendChild(attributesContainerEl);
+      rootEl.appendChild(buttonEl);
 
       break;
   }
