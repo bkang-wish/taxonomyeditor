@@ -5,6 +5,7 @@ import * as path from "path";
 import * as vscode from "vscode";
 import * as yaml from "js-yaml";
 import { CategoryEditorProvider } from "./category-editor-provider";
+import { TaxonomyTreeProvider } from "./taxonomy-tree-provider";
 
 interface TranslationObject {
   lang: string;
@@ -106,6 +107,11 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable);
 
   context.subscriptions.push(CategoryEditorProvider.register(context));
+
+  vscode.window.registerTreeDataProvider(
+    "taxonomyeditor.treeview",
+    new TaxonomyTreeProvider(rootDir.path)
+  );
 }
 
 // this method is called when your extension is deactivated

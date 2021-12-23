@@ -14,6 +14,14 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "taxonomyeditor.treeview",
+          "name": "Taxonomy Editor"
+        }
+      ]
+    },
     "customEditors": [
       {
         "viewType": "taxonomyeditor.edit",
